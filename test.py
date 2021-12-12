@@ -26,4 +26,14 @@ if __name__=="__main__":
 
     print(G) 
 
+    G.add(nodes["B"])
+
+    print(G)
+
+    G.add_edge(1,2)
+
+    print(G.distance(0,2))
+
+    
+
 

@@ -54,8 +54,8 @@ class Graph():
         # update indexes
         for i in range(len(self.nodes)):
             self.nodes[i].id = self.nodes[i].id - (1 if index<=i else 0)
-            self.nodes[i].edges_in  = [ j - (1 if index<=j else 0) for j in self.nodes[i].edges_in]
-            self.nodes[i].edges_out = [ j - (1 if index<=j else 0) for j in self.nodes[i].edges_out]
+            self.nodes[i].edges_in  = set([ j - (1 if index<=j else 0) for j in self.nodes[i].edges_in])
+            self.nodes[i].edges_out = set([ j - (1 if index<=j else 0) for j in self.nodes[i].edges_out])
 
         # remove nodes
         del self.nodes[index]
